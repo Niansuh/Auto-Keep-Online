@@ -1,0 +1,21 @@
+{
+  "name": "Auto-Keep-Online",
+  "version": "2.0.0",
+  "description": "Auto-Keep-Online",
+  "main": "index.js",
+  "author": "Niansuh",
+  "repository": "https://github.com/Niansuh/Auto-Keep-Online",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "node-cron": "^2.0.1",
+    "moment-timezone": "latest"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
