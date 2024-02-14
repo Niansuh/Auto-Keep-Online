@@ -31,7 +31,7 @@ function visitWebsites() {
    websites.forEach(async (url) => {
      try {
        const response = await axios.get(url);
-       console.log(`${moment().tz('Asia/Hong_Kong').format('YYYY-MM-DD HH:mm:ss')} Visited web successfully: ${url} - Status code: ${ response.status}\n`);
+       console.log(`${moment().tz('Asia/Karachi').format('YYYY-MM-DD HH:mm:ss')} Visited web successfully: ${url} - Status code: ${ response.status}\n`);
      } catch (error) {
        console.error(`Error visiting ${url}: ${error.message}\n`);
      }
@@ -40,12 +40,12 @@ function visitWebsites() {
 
 // Check and set the timer
 function checkAndSetTimer() {
-   const currentMoment = moment().tz('Asia/Hong_Kong');
+   const currentMoment = moment().tz('Asia/Karachi');
    const formattedTime = currentMoment.format('YYYY-MM-DD HH:mm:ss');
    if (currentMoment.hours() >= 1 && currentMoment.hours() < 5) {
-     console.log(`Stop visit from 1:00 to 5:00 --- ${moment().tz('Asia/Hong_Kong').format('YYYY-MM-DD HH:mm:ss')}` );
+     console.log(`Stop visit from 1:00 to 5:00 --- ${moment().tz('Asia/Karachi').format('YYYY-MM-DD HH:mm:ss')}` );
      clearInterval(visitIntervalId); // Clear timer
-     const nextVisitTime = moment().tz('Asia/Hong_Kong').add(0, 'day').hours(5).minutes(0).seconds(0);
+     const nextVisitTime = moment().tz('Asia/Karachi').add(0, 'day').hours(5).minutes(0).seconds(0);
      const nextVisitInterval = nextVisitTime.diff(currentMoment);
      setTimeout(() => {
        startVisits();
@@ -77,9 +77,9 @@ runScript();
 async function scrapeAndLog(url) {
    try {
      const response = await axios.get(url);
-     console.log(`${moment().tz('Asia/Hong_Kong').format('YYYY-MM-DD HH:mm:ss')} Web visited Successfully: ${url} - Status code: ${ response.status}\n`);
+     console.log(`${moment().tz('Asia/Karachi').format('YYYY-MM-DD HH:mm:ss')} Web visited Successfully: ${url} - Status code: ${ response.status}\n`);
    } catch (error) {
-     console.error(`${moment().tz('Asia/Hong_Kong').format('YYYY-MM-DD HH:mm:ss')}: Web visited Error: ${url}: ${error. message}\n`);
+     console.error(`${moment().tz('Asia/Karachi').format('YYYY-MM-DD HH:mm:ss')}: Web visited Error: ${url}: ${error. message}\n`);
    }
 }
 //Access every 2 minutes
